@@ -31,6 +31,8 @@ class BlackjackGame:
                 self.dealer_turn(deck)
             deck.recombine()
             print(self.winner_statement(self.decide_winner()))
+            self.player_cards.clear()
+            self.dealer_cards.clear()
             game_over = True
 
     def player_turn(self, deck):
