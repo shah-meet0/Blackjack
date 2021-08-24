@@ -82,12 +82,18 @@ class BlackjackGame:
 
     def get_player_value(self, dealer=False):
         value = 0
+        number_aces = 0
         if dealer:
             for card in self.dealer_cards:
                 value += card.get_value()
         else:
             for card in self.player_cards:
+                if card.card_name == "Ace":
+                    number_aces += 1
                 value += card.get_value()
+            while number_aces > 0 and value > 21:
+                value = value - 10
+                number_aces = number_aces - 1
         return value
 
     def describe(self):
