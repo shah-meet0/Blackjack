@@ -1,4 +1,4 @@
-# blackjacktrial
+# Blackjack
 ## Information
 This project implements a very basic version of Blackjack with a betting simulator built into it using python.
 
