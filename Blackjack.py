@@ -85,7 +85,10 @@ class BlackjackGame:
 
     def winner_statement(self, winner, bet):
         if winner == "player":
-            self.bet += bet
+            if self.get_player_value() == 21:
+                self.bet += 1.5 * bet
+            else:
+                self.bet += bet
             return "Congrats, you won."
         if winner == "dealer":
             self.bet -= bet
