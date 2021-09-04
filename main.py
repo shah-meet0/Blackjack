@@ -1,4 +1,4 @@
-from Blackjack import BlackjackGame
+from blackjack import BlackjackGame
 
 tester = BlackjackGame()
 tester.run()
