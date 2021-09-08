@@ -31,20 +31,18 @@ class BlackjackGame:
     def game(self):
         deck = Deck()
         game_over = False
-        while not game_over:
-            deck.shuffle()
-            self.bet_statement()
-            bet = self.get_bet()
-            self.player_cards.append(deck.draw())
-            self.dealer_cards.append(deck.draw())
-            do_dealer_turn = self.player_turn(deck)
-            if do_dealer_turn:
-                self.dealer_turn(deck)
-            deck.recombine()
-            print(self.winner_statement(self.decide_winner(), bet))
-            self.player_cards.clear()
-            self.dealer_cards.clear()
-            game_over = True
+        deck.shuffle()
+        self.bet_statement()
+        bet = self.get_bet()
+        self.player_cards.append(deck.draw())
+        self.dealer_cards.append(deck.draw())
+        do_dealer_turn = self.player_turn(deck)
+        if do_dealer_turn:
+            self.dealer_turn(deck)
+        deck.recombine()
+        print(self.winner_statement(self.decide_winner(), bet))
+        self.player_cards.clear()
+        self.dealer_cards.clear()
 
     def player_turn(self, deck):
         while self.get_player_value() < 21:
